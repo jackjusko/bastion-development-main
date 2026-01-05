@@ -1,91 +1,46 @@
-#Pillar Coaching
+Pillar Coaching
 ==============
 
-Pillar Coaching is an online, peer-to-peer training marketplace where vetted coaches publish subscription training plans and clients choose a coach via coach-submitted offers. The platform also supports admin accounts for Pillar employees to inspect coach/client relationships and invite new coaches to join.
+Pillar Coaching is an online marketplace-style platform for personal training, centered on vetted coaches and subscription-based training plans. This repository contains the web application that served as the MVP for the initial launch of an early-stage startup named Bastion LLC (Desai Accelerator 2023 finalist; seed-funded). The name Bastion is still being used by one of the initial cofounders for his personal training program, and so this has been renamed to Pillar Coaching.
 
-This repository contains the full-stack application:
-- Frontend: Vue 2 single-page application (Vue Router + Bulma + Axios)
-- Backend: Express.js REST API
-- Database: SQLite in this repository (Amazon RDS in production), behind a swappable driver layer with matching interfaces
-- Payments: Stripe Connect (client-to-coach billing with a platform fee)
+Core Product Flow
+-----------------
+- Coaches join the platform through an invite + vetting process.
+- Coaches create training plans as recurring subscriptions.
+- Clients receive offers from coaches that include an introductory message and a suggested plan.
+- Clients select a coach from the offers they’ve received and subscribe to that coach’s plan.
+- Admin accounts (for internal staff) can inspect coach↔client relationships and send coach invites by email.
 
+Billing & Payments (Stripe Connect)
+-----------------------------------
+A key technical component of the system is two-sided payments:
+- Clients pay coaches directly via Stripe Connect.
+- Platform fees are taken as an application fee during the payment flow.
+- Payouts to coaches are handled through connected accounts rather than via internal ledger payouts.
 
-What this project demonstrates (technical)
-------------------------------------------
+This approach keeps fund flows and compliance responsibilities aligned with Stripe’s Connect model while still supporting platform-level monetization.
 
-1) Two-sided billing via Stripe Connect
-   - Clients pay for a coach subscription through Stripe.
-   - Coaches are paid through Connect while the platform takes an application fee (“fee off the top”).
-   - Designed around Stripe’s subscription lifecycle (creation, renewal, cancellation, failed payments) and keeping application state in sync with Stripe events.
-
-2) Marketplace-style matching via offers
-   - Coaches can send offers to a client containing an introduction and a suggested subscription plan.
-   - Clients select a coach by accepting one of the offers they receive, which starts the subscription.
-
-3) Swappable persistence layer (SQLite <-> RDS)
-   - Local development uses SQLite.
-   - Production used Amazon RDS.
-   - The RDS and SQLite drivers implement identical interfaces, allowing the backend to switch databases without changing calling code.
-
-
-Core flows
+Tech Stack
 ----------
-
-Coach onboarding + plan publishing
-- A coach joins Pillar and is vetted (out-of-band).
-- The coach completes Stripe Connect onboarding.
-- The coach creates one or more subscription training plans.
-
-Client acquisition via offers
-- A client joins the platform.
-- Coaches send offers to the client (intro statement + recommended plan).
-- The client chooses a coach by accepting an offer and begins subscribing to that coach’s plan.
-
-Billing & payouts (Stripe Connect)
-- Subscription payments are collected from the client.
-- Funds are routed to the coach through Connect.
-- The platform collects an application fee.
-- Stripe webhooks (or equivalent event handling) are used to reflect subscription state changes in the application.
-
-
-Admin features
---------------
-
-Admin accounts (Pillar employees) can:
-- Explore coach/client relationships.
-- Send invite emails to onboard new coaches.
-
-
-Tech stack
-----------
-
 Frontend
-- Vue 2
-- Vue Router
-- Bulma
-- Axios
+- Vue 2 + Vue Router
+- Bulma for styling
+- Axios for API access
+- Implemented as a single-page application (SPA)
 
 Backend
-- Node.js
-- Express.js
+- Node.js + Express.js REST API
 
 Database
-- SQLite (in this repository)
-- Amazon RDS (in production; same interface as SQLite driver)
+- Relational schema with interchangeable drivers:
+  - Amazon RDS (original deployment)
+  - SQLite (used in this repository)
+- The RDS and SQLite drivers expose identical interfaces, enabling swapping without changing the surrounding application logic.
 
-Payments
-- Stripe Connect
-
-
-Database schema
----------------
-
-Relational schema diagram:
+Database diagram:
 https://dbdiagram.io/d/Bastion-Database-Schema-64322d058615191cfa8c6945
 
-
-Notes
------
-
-- This README is intentionally focused on architecture and technical responsibilities (payments, subscriptions, driver abstraction) rather than providing a “getting started” guide.
-- Credentials, keys, and operational configuration are intentionally not included here.
+Repository Notes
+----------------
+- This repo reflects the MVP-era implementation and is organized as a typical SPA + API service.
+- Configuration here targets a local SQLite-backed environment to keep the repository self-contained.
