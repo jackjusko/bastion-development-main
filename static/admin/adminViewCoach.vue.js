@@ -11,14 +11,14 @@ var adminViewCoachTemplate = `
 		</div>
 	</div>
 	<div class="b-breaker"></div>
-	<div class="columns is-mobile" style="padding-left: 4vmin; padding-right: 4vmin; padding-top: 4vmin;">
+	<div class="columns is-mobile" style="padding: 1rem;">
 		<div class="column is-10" style="font-weight: 900;">
 			Profile Picture
 		</div>
 	</div>
 	<img v-bind:src="profileInfo.PROFILEPICTURE" class="editProfileImage" />
 	<div class="b-breaker"></div>
-	<div class="columns is-mobile" style="padding-left: 4vmin; padding-right: 4vmin; padding-top: 4vmin;">
+	<div class="columns is-mobile" style="padding: 1rem;">
 		<div class="column is-10" style="font-weight: 900;">
 			About
 		</div>
@@ -29,7 +29,7 @@ var adminViewCoachTemplate = `
 		</div>
 	</div>
 	<div class="b-breaker"></div>
-	<div class="columns is-mobile" style="padding-left: 4vmin; padding-right: 4vmin; padding-top: 4vmin;">
+	<div class="columns is-mobile" style="padding: 1rem;">
 		<div class="column is-10" style="font-weight: 900;">
 			Certifications
 		</div>
@@ -39,7 +39,7 @@ var adminViewCoachTemplate = `
 			<li v-for="(cert, index) in certifications">{{cert.CERTIFICATION}}</li>
 		</ul>
 	</div>
-	<button class="button b-button" style=" width: 50%; margin-left: 25%;" v-on:click="$parent.navigate('/admin/coach/' + coachID + '/clients');">View Clients</button>
+	<button class="button b-button" style=" width: 50%; margin: 1rem auto; display: block;" v-on:click="$parent.navigate('/admin/coach/' + coachID + '/clients');">View Clients</button>
 </div>
 `;
 

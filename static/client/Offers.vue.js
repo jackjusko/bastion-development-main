@@ -7,10 +7,10 @@ var offersTemplate = `
 			<div class="column is-6 nopadding">
 				<img class="offerImage" v-bind:src="offer.profilePicture" />
 			</div>
-			<div class="column nopadding" style="padding-top: 5vmin !important;padding: 2vmin;">
-				<span style="font-weight: 900; font-size: 4.5vmin;">{{offer.name}}</span>
+			<div class="column nopadding" style="padding: 1rem !important;">
+				<span style="font-weight: 900; font-size: 1.5rem;">{{offer.name}}</span>
 				<br />
-				<span style="font-size: 3vmin;">{{offer.title}} <br /> ({{offer.price}} USD)</span>
+				<span style="font-size: 1rem;">{{offer.title}} <br /> ({{offer.price}} USD)</span>
 				<br />
 				<br />
 				<br />
@@ -32,7 +32,7 @@ var offersTemplate = `
 		<div class="overlay" v-show="showOffer">
 			<div class="desktopOfferBox">
 				<div style="text-align: right;" class="closePopup"  v-on:click="showOffer = false">
-					<i class="fa-solid fa-circle-xmark fa-fade" style="color: #000000;"></i>
+					<i class="fa-solid fa-circle-xmark fa-fade" style="color: var(--b-darkblack);"></i>
 				</div>
 				<offer-popup></offer-popup>
 			</div>
@@ -43,7 +43,7 @@ var offersTemplate = `
 			<div class="column is-3 filterColumn">
 				<span style="font-weight: 900;">Filters (Coming Soon)</span>
 				<br /><br />
-				<div style="background-color: var(--light-bg-color); padding: 3vmin; border-radius: 10px;">
+				<div style="background-color: var(--b-lg); padding: 1rem; border-radius: 10px;">
 					<div class="b-breaker"></div>
 					<div class="columns">
 						<div class="column is-9">
@@ -91,12 +91,12 @@ var offersTemplate = `
 							<img class="offerImage" v-bind:src="offer.profilePicture" />
 						
 						
-							<span style="font-weight: 900; font-size: 2vmin;">{{offer.name}}</span>
+							<span style="font-weight: 900; font-size: 1rem;">{{offer.name}}</span>
 							<br />
-							<span style="font-size: 1.5vmin;">{{offer.title}} <br /> ({{offer.price}} USD)</span>
+							<span style="font-size: 0.8rem;">{{offer.title}} <br /> ({{offer.price}} USD)</span>
 							<br /><br />
 							<div style="width: 100%; text-align: center;">
-								<span style="color: var(--teal); text-decoration: underline; font-weight: 900; font-size: 2vmin;" v-on:click="openOffer(offer.ID)">View Profile</span>
+								<span style="color: var(--teal); text-decoration: underline; font-weight: 900; font-size: 1rem;" v-on:click="openOffer(offer.ID)">View Profile</span>
 							</div>
 						
 					</div>

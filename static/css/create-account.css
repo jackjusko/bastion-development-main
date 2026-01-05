@@ -1,131 +1,134 @@
-@media only screen and (min-width: 768px) {
-	/* DESKTOP */
-	
-	.promptA {
-		margin-top: 10vmin;
-		text-align: center;
-		font-family: 'Montserrat';
-		font-size: 6.5vmin;
-		font-weight: 900;
-		line-height: 8vmin;
-	}
-	
-	
-	.underprompt {
-		text-align: center;
-		font-family: 'Montserrat';
-		font-size: 3vmin;
-		font-weight: 300;
-		line-height: 5vmin;
-	}
-	
-	.loginDesktop{
-		width: 50%;
-		margin-left: 25%;
-	}
-	
-	.create {
-		width: 40%;
-		margin-left: 30%;
-		margin-top: 4vmin;
-		height: 7vmin;
-		font-size: 3vmin;
-		background-color: white;
-		border-color: var(--teal);
-	}
-	
-	.popup{
-		padding-bottom: 5vmin !important;
-		margin-top: 10%;
-		width: 20%;
-		margin-left: 40%;
-		background-color: white;
-		padding: 2vmin;
-		text-align: center;
-		font-family: 'Montserrat';
-		font-size: 3vmin;
-		border-radius: 5px;
-	}
-	
-	.closePopup{
-		 font-size: 3vmin;
-	}
+/* Layout Containers */
+.loginDesktop {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
 }
 
-
-@media only screen and (max-width: 767px) {
-	/* MOBILE */
-	
-	.promptA {
-		margin-top: 20vmin;
-		text-align: center;
-		font-family: 'Montserrat';
-		font-size: 8.5vmin;
-		font-weight: 900;
-		line-height: 10vmin;
-	}
-	
-	
-	.underprompt {
-		text-align: center;
-		font-family: 'Montserrat';
-		font-size: 4vmin;
-		font-weight: 300;
-		line-height: 10vmin;
-	}
-	
-	.create {
-		width: 90vmin;
-		margin-left: 5vmin;
-		margin-top: 4vmin;
-		background-color: white;
-		border-color: var(--teal);
-	}
-	
-	.popup{
-		padding-bottom: 10vmin !important;
-		margin-top: 60%;
-		width: 70%;
-		margin-left: 15%;
-		background-color: white;
-		padding: 4vmin;
-		text-align: center;
-		font-family: 'Montserrat';
-		font-size: 4vmin;
-		border-radius: 5px;
-	}
-	
-	.closePopup{
-		 font-size: 8vmin;
-	}
+/* Typography */
+.promptA {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-align: center;
+    color: var(--b-darkblack);
+    margin-top: 4rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
 }
 
+.underprompt {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-align: center;
+    color: #666;
+    margin-bottom: 2rem;
+}
 
+/* Form Elements */
+.create {
+    width: 100%;
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    height: auto;
+    padding: 0.75rem;
+    /* Use b-button styles but ensure full width if needed */
+}
 
+.showError {
+    color: #ff3860;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    text-align: center;
+    font-weight: 600;
+}
 
+/* Popup / Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(2px);
+    transition: opacity 0.3s ease;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.popup {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    position: relative;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.closePopup {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #aaa;
+    transition: color 0.2s;
+}
+
+.closePopup:hover {
+    color: #333;
+}
+
+/* Utilities */
 .boxpad {
-	padding-bottom: 1vmin !important;
-	padding: 0vmin;
+    padding: 0 !important;
 }
 
-
-.hidden{
-	visibility: hidden;
+.alreadyjoined {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.2s;
 }
 
-.overlay{
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	background-color: rgba(0,0,0,0.15);
-	top: 0;
-	z-index: 1;
+.alreadyjoined:hover {
+    color: var(--teal);
 }
 
-
-.showError{
-	font-size: 3vmin;
-	text-align: center;
-	font-family: 'Montserrat';
-	color: red;
+/* Responsive Overrides */
+@media screen and (max-width: 768px) {
+    .promptA {
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
+    
+    .underprompt {
+        font-size: 1rem;
+    }
+    
+    .popup {
+        width: 95%;
+        padding: 1.5rem;
+    }
+    
+    .loginDesktop {
+        width: 100%;
+        padding: 1.5rem;
+    }
 }

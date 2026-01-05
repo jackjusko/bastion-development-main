@@ -3,7 +3,7 @@ var loginTemplate = `
 	<div class="overlay" v-bind:class="{hidden: overlayHidden}">
 		<div class="popup">
 			<div class="closePopup" style="text-align: right;" v-on:click="closeOverlay()">
-				<i class="fa-solid fa-circle-xmark fa-fade" style="color: #000000;"></i>
+				<i class="fa-solid fa-circle-xmark fa-fade" style="color: var(--b-darkblack);"></i>
 			</div>
 			<br />
 			{{popupMessage}}

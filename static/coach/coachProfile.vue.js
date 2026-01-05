@@ -12,7 +12,7 @@ var coachProfileTemplate = `
 		</div>
 		<div class="b-breaker"></div>
 	</div>
-	<div class="columns" style="width: 90%; margin-left: 5%;">
+	<div class="columns" style="width: 90%; margin: 0 auto;">
 		<div class="column is-1" style="position: relative; ">
 			<img class="clientimage" style="width: 100%; height: auto;" v-bind:src="$parent.profilePictureURL" />
 			<label for="picture-upload">
@@ -27,8 +27,8 @@ var coachProfileTemplate = `
 			</div>
 		</div>
 	</div>
-	<div class="columns" style="width: 90%; margin-left: 5%;">
-		<div class="column is-4" style="border-right: solid 1px grey;">
+	<div class="columns" style="width: 90%; margin: 0 auto;">
+		<div class="column is-4" style="border-right: solid 1px #dbdbdb;">
 			<span style="font-size: 1.5rem; font-weight: 700;">Bastion Balance:</span>
 			<div style="width: 100%; text-align: center; font-weight: 700;">
 				<span style="font-size: 2rem;">
@@ -39,7 +39,7 @@ var coachProfileTemplate = `
 				</span>
 				Pending: $ {{pendingBalance}}
 			</div>
-			<button class="button b-button" style="width: 100%; margin-left: 0%; color: black; height: 5rem; font-size: 1.5rem; margin-top: 1rem; margin-bottom: 1rem;" v-on:click="openPortal()">Open Payouts Portal</button>
+			<button class="button b-button" style="width: 100%; color: var(--b-darkblack); height: auto; padding: 1rem; font-size: 1.5rem; margin: 1rem 0; display: block;" v-on:click="openPortal()">Open Payouts Portal</button>
 			<span style="font-size: 1.5rem; font-weight: 700;">My Bio: <span style="color: var(--teal); font-size: 1rem;" v-html="editBinding" v-on:click="editClick()"></span> </span>
 			<div v-show="!editing" style="overflow-wrap: break-word;">
 				{{$parent.about}}
@@ -84,7 +84,7 @@ var coachProfileTemplate = `
 						</ul>
 					</li>
 				</ul>
-				<button class="button" v-on:click="addCert()" style="margin-left: 2em;"><i class="fa-solid fa-plus"></i>&nbspAdd Certification</button>
+				<button class="button" v-on:click="addCert()" style="margin-left: 1rem;"><i class="fa-solid fa-plus"></i>&nbspAdd Certification</button>
 			</div>
 			
 			<span style="font-size: 1.5rem; font-weight: 700;">Expertise:</span>
@@ -115,8 +115,8 @@ var coachProfileTemplate = `
 			</div>
 			<span style="font-size: 1.5rem; font-weight: 700;">My Clients:</span>
 			<br /><br />
-			<div v-if="!$parent.isMobile" style="display: flex; flex-direction: row; width: 95%; margin-left: 2.5%;">
-				<div class="columns" style="width: 25%; background-color: var(--b-lg); margin-right: 1rem; margin-left: 1rem;" v-for="client in clients" v-on:click="$parent.navigate('/coach/viewActiveClient/' + client.PLANID);">
+			<div v-if="!$parent.isMobile" style="display: flex; flex-direction: row; width: 95%; margin: 0 auto;">
+				<div class="columns" style="width: 25%; background-color: var(--b-lg); margin: 0 1rem;" v-for="client in clients" v-on:click="$parent.navigate('/coach/viewActiveClient/' + client.PLANID);">
 					<div class="column is-3">
 						<img v-bind:src="client.PROFILEPICTURE" style="width: 100%; height: auto;" />
 					</div>
@@ -134,7 +134,7 @@ var coachProfileTemplate = `
 				</div>
 			</div>
 			<div v-if="$parent.isMobile" style=" width: 95%; margin-left: 2.5%;">
-				<div class="columns is-mobile" style="width: 80%; margin-bottom: 1.5rem; background-color: var(--b-lg); margin-right: 1rem; margin-left: 1rem;" v-for="client in clients" v-on:click="$parent.navigate('/coach/viewActiveClient/' + client.PLANID);">
+				<div class="columns is-mobile" style="width: 80%; margin: 0 auto 1.5rem auto; background-color: var(--b-lg);" v-for="client in clients" v-on:click="$parent.navigate('/coach/viewActiveClient/' + client.PLANID);">
 					<div class="column is-3">
 						<img v-bind:src="client.PROFILEPICTURE" style="width: 100%; height: auto;" />
 					</div>

@@ -2,7 +2,7 @@ var coachDashboardTemplate = `
 <div class="coachBackground" style="height: 100%;" key="1">
 	<img v-bind:src="$parent.profilePictureURL" class="profileImage" />
 	<div class="underProfilePic">
-		<div style="font-size: 4vmin;">
+		<div style="font-size: 1.25rem;">
 			<!--
 			<label for="picture-upload"><i class="fa-solid fa-camera"></i></label>
 			This label can just be dropped anywhere to edit the profile pic.

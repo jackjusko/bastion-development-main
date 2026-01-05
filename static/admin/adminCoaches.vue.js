@@ -7,7 +7,7 @@ var adminCoachesTemplate = `
 			<input class="input inputx" type="text" placeholder="Email" v-model="coachInvite.email">
 			<input class="input inputx" type="text" placeholder="ID Number">
 			<input class="input inputx" type="text" placeholder="Temporary Password" v-model="coachInvite.password">
-			<button class="button b-button withdraw-button" style="margin-left: 12.5%;" v-on:click="inviteCoach()">Add</button>
+			<button class="button b-button withdraw-button" style="margin: 0 auto; display: block;" v-on:click="inviteCoach()">Add</button>
 		</div>
 	</div>
 	<div class="b-acctop">

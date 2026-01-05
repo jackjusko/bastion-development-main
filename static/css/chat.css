@@ -1,16 +1,27 @@
-.chatWindow{
-	width: 30%;
-	aspect-ratio: 1/1;
-	overflow-y: scroll;
-	margin-left: 35%;
-	margin-top: 15vmin;
-	background-color: white;
+/* Chat Window Desktop */
+.chatWindow {
+    width: 90%;
+    max-width: 400px;
+    height: 60vh;
+    overflow-y: auto;
+    margin: 10vh auto;
+    background-color: white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
 }
 
-.desktopChatHeader{
-	width: 100%;
-	background-color: var(--b-darkblack);
-	padding: 2vmin;
-	color: white;
-	font-size: 3vmin;
+.desktopChatHeader {
+    width: 100%;
+    background-color: var(--b-darkblack);
+    padding: 1rem;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 600;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

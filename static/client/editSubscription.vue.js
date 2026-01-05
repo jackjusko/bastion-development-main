@@ -15,8 +15,8 @@ var editSubscriptionTemplate = `
 		Current Membership
 	</div>
 	<br />
-	<div class="columns is-mobile" style="padding-left: 4vmin; padding-right: 4vmin; padding-top: 4vmin;">
-		<div class="column is-10" style="font-weight: 900; font-size: 4.5vmin;">
+	<div class="columns is-mobile" style="padding: 1.5rem;">
+		<div class="column is-10" style="font-weight: 900; font-size: 1.5rem;">
 			Basic Coaching with Sebastien
 		</div>
 		<div class="column">

@@ -19,7 +19,7 @@ var editProfileTemplate = `
 		</div>
 	</div>
 	<div class="b-breaker"></div>
-	<div class="columns is-mobile" style="padding-left: 4vmin; padding-right: 4vmin; padding-top: 4vmin;">
+	<div class="columns is-mobile" style="padding: 1.5rem;">
 		<div class="column is-10" style="font-weight: 900;">
 			Profile Picture
 		</div>
@@ -29,7 +29,7 @@ var editProfileTemplate = `
 	</div>
 	<img v-bind:src="$parent.profilePictureURL" class="editProfileImage" />
 	<div class="b-breaker"></div>
-	<div class="columns is-mobile" style="padding-left: 4vmin; padding-right: 4vmin; padding-top: 4vmin;">
+	<div class="columns is-mobile" style="padding: 1.5rem;">
 		<div class="column is-10" style="font-weight: 900;">
 			About
 		</div>
@@ -46,7 +46,7 @@ var editProfileTemplate = `
 		</div>
 	</div>
 	<div class="b-breaker"></div>
-	<div class="columns is-mobile" style="padding-left: 4vmin; padding-right: 4vmin; padding-top: 4vmin;">
+	<div class="columns is-mobile" style="padding: 1.5rem;">
 		<div class="column is-10" style="font-weight: 900;">
 			Account Controls
 		</div>
@@ -55,7 +55,7 @@ var editProfileTemplate = `
 		<span style="color: var(--teal);" v-on:click="resetPassword()">Reset my Password</span>
 	</div>
 	
-	<div class="columns is-mobile" style="padding-left: 4vmin; padding-right: 4vmin; padding-top: 4vmin;" v-show="$parent.isCoach">
+	<div class="columns is-mobile" style="padding: 1.5rem;" v-show="$parent.isCoach">
 		<div class="column is-10" style="font-weight: 900;">
 			Certifications
 		</div>
@@ -87,7 +87,7 @@ var editProfileTemplate = `
 				</ul>
 			</li>
 		</ul>
-		<button class="button" v-on:click="addCert()" style="margin-left: 2em;"><i class="fa-solid fa-plus"></i>&nbspAdd Certification</button>
+		<button class="button" v-on:click="addCert()" style="margin-left: 1rem;"><i class="fa-solid fa-plus"></i>&nbspAdd Certification</button>
 	</div>
 </div>
 `;

@@ -85,7 +85,7 @@ var coachJoinTemplate = `
 	</div>
 	<div v-if="selectedIndex == 5"  class="w95">
 		<h1 class="cjQuestionHeader">List 2 attributes that most fit your coaching style</h1>	
-		<div style="margin-left: 2.5%;" class="attributeTitle" >Attribute 1</div>
+		<div style="margin-left: 0;" class="attributeTitle" >Attribute 1</div>
 		<div class="select width95" v-bind:class="{'is-large': !$parent.isMobile}">
 		  <select style="width: 100%;" v-model="payload.attributes[0]">
 			<option>Educational/Informative</option>
@@ -127,7 +127,7 @@ var coachJoinTemplate = `
 	</div>
 	<div v-if="selectedIndex == 6" class="w95">
 		<h1 class="cjQuestionHeader">Rank 3 specialties you are the most experienced with</h1>	
-		<div style="margin-left: 2.5%;" class="attributeTitle">Specialty 1</div>
+		<div style="margin-left: 0;" class="attributeTitle">Specialty 1</div>
 		<div class="select width95" v-bind:class="{'is-large': !$parent.isMobile}">
 		  <select style="width: 100%;" v-model="payload.specialties[0]">
 			<option>Strength Training</option>
@@ -152,7 +152,7 @@ var coachJoinTemplate = `
 		  </select>
 		</div>
 		<br /><br />
-		<div style="margin-left: 2.5%;" class="attributeTitle">Specialty 2</div>
+		<div style="margin-left: 0;" class="attributeTitle">Specialty 2</div>
 		<div class="select width95" v-bind:class="{'is-large': !$parent.isMobile}">
 		  <select style="width: 100%;" v-model="payload.specialties[1]">
 			<option>Strength Training</option>
@@ -177,7 +177,7 @@ var coachJoinTemplate = `
 		  </select>
 		</div>
 		<br /><br />
-		<div style="margin-left: 2.5%;" class="attributeTitle">Specialty 3</div>
+		<div style="margin-left: 0;" class="attributeTitle">Specialty 3</div>
 		<div class="select width95" v-bind:class="{'is-large': !$parent.isMobile}">
 		  <select style="width: 100%;" v-model="payload.specialties[2]">
 			<option>Strength Training</option>
@@ -319,13 +319,13 @@ var coachJoinTemplate = `
 			<div v-for="(cert, index) in payload.certifications">
 				<br />
 				Certification
-				<input class="input" style="margin-bottom: 2vmin;" type="text" placeholder="Enter a certification name" v-model="payload.certifications[index].title" />
+				<input class="input" style="margin-bottom: 0.5rem;" type="text" placeholder="Enter a certification name" v-model="payload.certifications[index].title" />
 				<br />
 				Completion Date
-				<input class="input" style="margin-bottom: 2vmin;" type="date" placeholder="mm/dd/yyyy" v-model="payload.certifications[index].date" />
+				<input class="input" style="margin-bottom: 0.5rem;" type="date" placeholder="mm/dd/yyyy" v-model="payload.certifications[index].date" />
 				<br />
 				Certification Number (if applicable)
-				<input class="input" style="margin-bottom: 2vmin;" type="text" placeholder="12345678" v-model="payload.certifications[index].number" />
+				<input class="input" style="margin-bottom: 0.5rem;" type="text" placeholder="12345678" v-model="payload.certifications[index].number" />
 			</div>
 			<span v-on:click="addCert()">+ Add another certification</span>
 		</div>
@@ -333,12 +333,12 @@ var coachJoinTemplate = `
 	<div v-if="selectedIndex == 12" class="w95">
 		<h1 class="cjQuestionHeader">Lastly, add a profile picture:</h1>
 		<label for="picture-upload">		
-			<div style="text-align: center; width: 100%; font-size: 20vmin; margin-top: 10%;" v-if="!showPFP">
-				<i class="fa-solid fa-image" style="background-color: lightgrey; padding: 9vmin; border-radius: 9999px;"></i>
+			<div style="text-align: center; width: 100%; font-size: 8rem; margin-top: 2rem;" v-if="!showPFP">
+				<i class="fa-solid fa-image" style="background-color: #dbdbdb; padding: 2rem; border-radius: 50%;"></i>
 			</div>
-			<img style="margin-top: 5%; width: 50%; margin-left: 25%; " v-bind:src="$parent.profilePictureURL" v-if="showPFP" />
+			<img style="margin: 2rem auto 0 auto; width: 50%; display: block;" v-bind:src="$parent.profilePictureURL" v-if="showPFP" />
 			<br />
-			<div style="width: 50%; margin-left: 25%; border-color: var(--teal); border-radius: 40px; border-style: solid; font-size: 3vmin; padding: 0.8vmin; text-align: center;">
+			<div style="width: 50%; margin: 1rem auto; border: 2px solid var(--teal); border-radius: 40px; font-size: 1rem; padding: 0.5rem; text-align: center; font-weight: 700;">
 				+ Upload Profile Picture
 			</div>
 		</label>

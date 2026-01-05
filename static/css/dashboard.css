@@ -1,104 +1,88 @@
-@media only screen and (min-width: 768px) {
-	/* DESKTOP */
-	.coachBackground{
-		color: black;
-	}
-	
-	.optionsContainer{
-		width: 40%;
-		margin-left: 30%;
-		display: block;
-		font-size: 3vmin;
-		color: black;
-		margin-top: 3vmin;
-		font-family: 'Montserrat';
-	}
-	
-	.profileText{
-		text-align: center;
-		color: black;
-		font-family: 'Montserrat';
-		font-size: 3vmin;
-	}
-	
-	.breaker-adjust{
-		margin-top: -2vmin;
-	}
-	
-	.subedit{
-		text-align: center;
-		font-family: 'Montserrat';
-		font-size: 3vmin;
-		color: black;
-		font-weight: 150;
-		margin-top: 1vmin;
-	}
-	
-	
-	.button-top{
-		margin-top: 5vmin;
-	}
+/* Dashboard Specifics */
+.coachBackground {
+    color: var(--b-darkblack);
+    padding-bottom: 2rem;
 }
 
-@media only screen and (max-width: 767px) {
-	
-	/* MOBILE */
-	
-	.coachBackground{
-		color: black;
-	}
-	
-	.optionsContainer{
-		width: 90%;
-		margin-left: 5%;
-		display: block;
-		font-size: 5vmin;
-		color: black;
-		margin-top: 3vmin;
-		font-family: 'Montserrat';
-	}
-	
-	.profileText{
-		text-align: center;
-		color: black;
-		font-family: 'Montserrat';
-	}
-	
-	.breaker-adjust{
-		margin-top: -4vmin;
-	}
-	
-	.subedit{
-		text-align: center;
-		font-family: 'Montserrat';
-		font-size: 4vmin;
-		color: white;
-		font-weight: 150;
-		margin-top: 2vmin;
-	}
-	
-	
-	.button-top{
-		margin-top: 10vmin;
-	}
-
+.underProfilePic {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 }
 
-
-
-
-
-
-
-
-.coachname{
-	font-weight: 150;
+.profileText {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--b-darkblack);
 }
 
-.drop{
-	margin-top: 1.5vmin;
+.subedit {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #666; /* darker grey for better contrast */
+    font-weight: 300;
+    margin-top: 0.5rem;
 }
 
-/* do not do this in most cases, I couldn't get the stupid fucking bar to move */
+/* Options List */
+.optionsContainer {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: var(--b-darkblack);
+}
 
+.drop {
+    margin-top: 0;
+    padding: 1rem 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
 
+.drop:hover {
+    background-color: #f5f5f5;
+}
+
+/* Breaker Adjustment - removing negative margins and relying on border */
+.breaker-adjust {
+    margin: 0 !important; /* Reset the global margin */
+    opacity: 0.3 !important;
+}
+
+.coachname {
+    font-weight: 400;
+    color: var(--teal);
+}
+
+.button-top {
+    margin-top: 2rem;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .optionsContainer {
+        font-size: 1.1rem;
+        width: 95%;
+    }
+    
+    .profileText {
+        font-size: 1.25rem;
+    }
+    
+    /* Make touch targets larger on mobile */
+    .drop {
+        padding: 1.25rem 0.5rem;
+    }
+    
+    .subedit {
+        font-size: 0.9rem;
+    }
+}

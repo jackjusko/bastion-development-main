@@ -9,12 +9,12 @@ var adminViewClientTemplate = `
 			<span class="undertext2"> Send to: </span>
 			<input class="input" style="height: 2em;" placeholder="Search for a coach.." v-model="searchQuery" />
 			<br /><br />
-			<div style="width: 95%; height: 50%; overflow-y: scroll; margin-left: 2.5%; border-style: solid; border-radius: 20px; padding: 1.5vmin; border-width: 2px;">
+			<div style="width: 95%; height: 50%; overflow-y: scroll; margin-left: 2.5%; border-style: solid; border-radius: 20px; padding: 0.5rem; border-width: 2px;">
 				<div v-for="coach in visibleCoaches" v-on:click="toggleCoach(coach.ID)">
 					<i class="fa-regular fa-square-check" v-show="assignedCoaches.includes(coach.ID)"></i> &nbsp {{coach.NAME}}
 				</div>
 			</div>
-			<button class="button b-button" v-on:click="assign()" style="height: 3rem; width: 70%; margin-left: 15%; margin-top: 0.5rem;" >Assign</button>
+			<button class="button b-button" v-on:click="assign()" style="height: 3rem; width: 70%; margin: 0.5rem auto; display: block;" >Assign</button>
 		</div>
 	</div>
 	

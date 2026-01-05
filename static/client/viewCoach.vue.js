@@ -5,13 +5,13 @@ var viewCoachTemplate = `
 			<div class="mainOfferDisplay">
 				<img class="mainOfferImage" v-bind:src="profileInfo.PROFILEPICTURE" />
 				<div style="text-align: center;">
-					<span style="font-weight: 900; font-size: 5vmin;">{{profileInfo.NAME}}</span>
+					<span style="font-weight: 900; font-size: 2rem;">{{profileInfo.NAME}}</span>
 					<br />
-					<span style="font-weight: 500; font-size: 3.5vmin;">{{profileInfo.LOCATION}}</span>
+					<span style="font-weight: 500; font-size: 1.25rem;">{{profileInfo.LOCATION}}</span>
 				</div>
 			</div>
 			<div class="belowOfferDisplay">
-				<div class="b-breaker" style="background-color: grey;"></div>
+				<div class="b-breaker" style="background-color: #dbdbdb;"></div>
 				<br />
 				<div class="offerSectionTitle">
 					About
@@ -20,7 +20,7 @@ var viewCoachTemplate = `
 					{{profileInfo.ABOUT}}
 				</div>
 				<br />
-				<div class="b-breaker" style="background-color: grey;"></div>
+				<div class="b-breaker" style="background-color: #dbdbdb;"></div>
 				<br />
 				<div class="offerSectionTitle">
 					Coaching Styles
@@ -31,7 +31,7 @@ var viewCoachTemplate = `
 						{{profileInfo.ATTRIBUTES.ATTRIBUTE3}}<br />
 				</div>
 				<br />
-				<div class="b-breaker" style="background-color: grey;"></div>
+				<div class="b-breaker" style="background-color: #dbdbdb;"></div>
 				<br />
 				<div class="offerSectionTitle">
 					Expertise
@@ -40,7 +40,7 @@ var viewCoachTemplate = `
 					<span v-for="exp of profileInfo.EXPERTISE">{{exp}}<br /></span>
 				</div>
 				<br />
-				<div class="b-breaker" style="background-color: grey;"></div>
+				<div class="b-breaker" style="background-color: #dbdbdb;"></div>
 				<br />
 				<div class="offerSectionTitle">
 					Languages
@@ -49,7 +49,7 @@ var viewCoachTemplate = `
 					<span v-for="lang of profileInfo.LANGUAGES">{{lang.LANGUAGE}} ({{lang.FLUENCY}})<br /></span>
 				</div>
 				<br />
-				<div class="b-breaker" style="background-color: grey;"></div>
+				<div class="b-breaker" style="background-color: #dbdbdb;"></div>
 				<br />
 				<div class="offerSectionTitle">
 					Certifications
@@ -67,13 +67,13 @@ var viewCoachTemplate = `
 			<div class="column is-3">
 				<img class="clientimage" v-bind:src="review.reviewInfo.PROFILEPICTURE" />
 			</div>
-			<div class="column" style="align-items: center; display: flex; font-size: 0.7rem;">
+			<div class="column" style="align-items: center; display: flex; font-size: 0.85rem;">
 			{{review.reviewInfo.NAME}}
 			<br />
 			{{review.REVIEW}}
 			</div>
 		</div>
-		<button class="button b-button" style="color: black; margin-left: 15%; width: 70%;" v-on:click="$parent.navigate('/review1');">Leave a Review</button>
+		<button class="button b-button" style="color: var(--b-darkblack); margin: 0 auto; width: 70%; display: block;" v-on:click="$parent.navigate('/review1');">Leave a Review</button>
 			</div>
 		</div>
 	</div>
@@ -92,9 +92,9 @@ var viewCoachTemplate = `
 			<div class="column is-5">
 				<img class="mainOfferImage" v-bind:src="profileInfo.PROFILEPICTURE" />
 				<div style="text-align: center;">
-					<span style="font-weight: 900; font-size: 4vmin;">{{profileInfo.NAME}}</span>
+					<span style="font-weight: 900; font-size: 1.5rem;">{{profileInfo.NAME}}</span>
 					<br />
-					<span style="font-weight: 500; font-size: 2.5vmin;">{{profileInfo.LOCATION}}</span>
+					<span style="font-weight: 500; font-size: 1rem;">{{profileInfo.LOCATION}}</span>
 				</div>
 			</div>
 			<div class="column is-7">
@@ -123,22 +123,22 @@ var viewCoachTemplate = `
 				</div>
 				<div style="font-weight: 900; padding-left: 0.75rem;">Certifications</div><br />
 				<div style="padding-left: 0.75rem;" v-for="cert in certifications">{{cert.CERTIFICATION}}</div>
-			</div>
 		</div>
-		<span style="font-size: 2.5vmin; font-weight: 900;">Reviews ({{reviews.length}})</span>
-		<br />
-		<div class="columns" v-for="review in reviews">
-			<div class="column is-1">
-				<img class="clientimage" v-bind:src="review.reviewInfo.PROFILEPICTURE" />
-			</div>
-			<div class="column" style="align-items: center; display: flex;">
-			{{review.reviewInfo.NAME}}
-			<br />
-			{{review.REVIEW}}
-			</div>
-		</div>
-		<button class="button b-button" style="color: black; margin-left: 35%;" v-on:click="$parent.navigate('/review1');">Leave a Review</button>
 	</div>
+	<span style="font-size: 1.25rem; font-weight: 900;">Reviews ({{reviews.length}})</span>
+	<br />
+	<div class="columns" v-for="review in reviews">
+		<div class="column is-1">
+			<img class="clientimage" v-bind:src="review.reviewInfo.PROFILEPICTURE" />
+		</div>
+		<div class="column" style="align-items: center; display: flex;">
+		{{review.reviewInfo.NAME}}
+		<br />
+		{{review.REVIEW}}
+		</div>
+	</div>
+	<button class="button b-button" style="color: var(--b-darkblack); margin: 0 auto; display: block;" v-on:click="$parent.navigate('/review1');">Leave a Review</button>
+</div>
 </div>
 `;
 

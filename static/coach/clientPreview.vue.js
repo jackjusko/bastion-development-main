@@ -8,7 +8,7 @@ var clientPreviewTemplate = `
 	<div class="overlay" v-bind:class="{hidden: overlayHidden}">
 		<div class="popup offeroverlay"  style="height: auto;">
 			<div style="text-align: right;" class="closePopup"  v-on:click="overlayHidden = true">
-				<i class="fa-solid fa-circle-xmark fa-fade" style="color: #000000;"></i>
+				<i class="fa-solid fa-circle-xmark fa-fade" style="color: var(--b-darkblack);"></i>
 			</div>
 			<span style="font-weight: 900;">Send Offer</span>
 			<br />

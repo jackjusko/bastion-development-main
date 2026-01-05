@@ -18,8 +18,8 @@ var transactionsTemplate = `
 	<div class="currentSubscription">
 		February 20th, 2023
 	</div>
-	<div class="columns is-mobile" style="padding-left: 4vmin; padding-right: 4vmin; padding-top: 4vmin;">
-		<div class="column is-9" style="font-size: 4.5vmin;">
+	<div class="columns is-mobile" style="padding: 1.5rem;">
+		<div class="column is-9" style="font-size: 1.5rem;">
 			<span class="transactionTitle">Coaching-Sebastien</span> 
 			<br />
 			Payment
@@ -32,8 +32,8 @@ var transactionsTemplate = `
 	<div class="currentSubscription">
 		January 20th, 2023
 	</div>
-	<div class="columns is-mobile" style="padding-left: 4vmin; padding-right: 4vmin; padding-top: 4vmin;">
-		<div class="column is-9" style="font-size: 4.5vmin;">
+	<div class="columns is-mobile" style="padding: 1.5rem;">
+		<div class="column is-9" style="font-size: 1.5rem;">
 			<span class="transactionTitle">Merchandise</span> 
 			<br />
 			Payment

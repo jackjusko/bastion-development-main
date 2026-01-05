@@ -3,9 +3,9 @@ var createAccountTemplate = `
 	<div class="overlay" v-bind:class="{hidden: overlayHidden}">
 		<div class="popup">
 			<div style="text-align: right;"class="closePopup" v-on:click="closeOverlay()">
-				<i class="fa-solid fa-circle-xmark fa-fade" style="color: #000000;"></i>
+				<i class="fa-solid fa-circle-xmark fa-fade" style="color: var(--b-darkblack);"></i>
 			</div>
-			<div style="text-align: center; font-weight: 900; font-size: 8vmin">
+			<div style="text-align: center; font-weight: 900; font-size: 2rem; margin-bottom: 1rem;">
 				{{popupHeader}}
 			</div>
 			<br />

@@ -9,7 +9,7 @@ var surveyTemplate = `
 			<div class="box b-surveyform boxpad">
 				<div v-for="(option, index) in currentQuestion.options">
 					<label v-bind:for="index">
-					<div class="columns is-mobile b-surveycolumns" style="margin-top: 1vmin !important;">	
+					<div class="columns is-mobile b-surveycolumns" style="margin-top: 0.5rem !important;">	
 						<div class="column b-surveycolumn">
 							{{option}}
 						</div>

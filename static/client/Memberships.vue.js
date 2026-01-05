@@ -19,7 +19,7 @@ var membershipsTemplate = `
 			<textarea class="textarea" v-model="editingPlan.DESCRIPTION"></textarea>
 			<span style="font-size: 1rem; font-weight: bold;">Features: </span>
 			<input v-for="(feature, index) in editingPlan.FEATURES" class="input" style="height: 1.2em;" v-model="editingPlan.FEATURES[index].FEATURE"/>
-			<button class="button b-button" v-on:click="save()" style="height: 3rem; width: 70%; margin-left: 15%; margin-top: 0.5rem;" >Save</button>
+			<button class="button b-button" v-on:click="save()" style="height: 3rem; width: 70%; margin: 0.5rem auto 0 auto; display: block;" >Save</button>
 		</div>
 	</div>
 
@@ -44,7 +44,7 @@ var membershipsTemplate = `
 	</div>
 	<div class="b-breaker"></div>
 	<div v-for="(plan, index2) in plans">
-		<div class="columns is-mobile" style="padding-left: 4vmin; padding-right: 4vmin; padding-top: 4vmin;">
+		<div class="columns is-mobile" style="padding: 1.5rem;">
 			<div class="column is-10" style="font-weight: 900;">
 				<span v-show="!plan.EDITING">{{plan.TITLE}}</span>
 				<input class="input" v-model="plan.TITLE" type="text" v-show="plan.EDITING" />
@@ -57,7 +57,7 @@ var membershipsTemplate = `
 		<div class="columns is-mobile aboutContentSmaller">
 			<div class="column is-10">
 				<span v-show="!plan.EDITING">{{plan.DESCRIPTION}}</span>
-				<textarea v-show="plan.EDITING" v-model="plan.DESCRIPTION" style="width: 100%; height: 15vmin;"></textarea>
+				<textarea v-show="plan.EDITING" v-model="plan.DESCRIPTION" style="width: 100%; height: 6rem;"></textarea>
 				<br /><br />
 				<ul style="list-style: inside;" v-show="!plan.EDITING">
 					<li v-for="feature in plan.FEATURES" v-show="feature.FEATURE != ''">{{feature.FEATURE}}</li>

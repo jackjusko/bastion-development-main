@@ -33,7 +33,7 @@ var adminClientsTemplate = `
 				</span>
 			  </button>
 			</div>
-			<div class="dropdown-menu" id="dropdown-menu3" role="menu" style="margin-left: -13vmin;">
+			<div class="dropdown-menu" id="dropdown-menu3" role="menu" style="margin-left: -3rem;">
 			  <div class="dropdown-content">
 				<a href="#" class="dropdown-item" v-on:click="allClients()">
 				  View All Clients

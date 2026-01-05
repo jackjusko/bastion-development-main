@@ -11,9 +11,9 @@ var coachOfferTemplate = `
 				<img class="mainOfferImage" v-bind:src="profileInfo.PROFILEPICTURE" />
 				<div class="pricingBackground">
 					<div style="text-align: center;">
-						<span style="font-weight: 900; font-size: 5vmin;">{{profileInfo.NAME}}</span>
+						<span style="font-weight: 900; font-size: 2rem;">{{profileInfo.NAME}}</span>
 						<br />
-						<span style="font-weight: 500; font-size: 3.5vmin;">{{profileInfo.LOCATION}}</span>
+						<span style="font-weight: 500; font-size: 1.25rem;">{{profileInfo.LOCATION}}</span>
 					</div>
 					<br />
 					<div class="columns is-mobile offerPricingDisplay">
@@ -34,7 +34,7 @@ var coachOfferTemplate = `
 				</div>
 			</div>
 			<div class="belowOfferDisplay">
-				<div class="b-breaker" style="background-color: grey;"></div>
+				<div class="b-breaker" style="background-color: #dbdbdb;"></div>
 				<br />
 				<div class="offerSectionTitle">
 					About
@@ -43,7 +43,7 @@ var coachOfferTemplate = `
 					{{profileInfo.ABOUT}}
 				</div>
 				<br />
-				<div class="b-breaker" style="background-color: grey;"></div>
+				<div class="b-breaker" style="background-color: #dbdbdb;"></div>
 				<br />
 				<div class="offerSectionTitle">
 					Coaching Styles
@@ -54,7 +54,7 @@ var coachOfferTemplate = `
 						{{profileInfo.ATTRIBUTES.ATTRIBUTE3}}<br />
 				</div>
 				<br />
-				<div class="b-breaker" style="background-color: grey;"></div>
+				<div class="b-breaker" style="background-color: #dbdbdb;"></div>
 				<br />
 				<div class="offerSectionTitle">
 					Expertise
@@ -63,7 +63,7 @@ var coachOfferTemplate = `
 					<span v-for="exp of profileInfo.EXPERTISE">{{exp}}<br /></span>
 				</div>
 				<br />
-				<div class="b-breaker" style="background-color: grey;"></div>
+				<div class="b-breaker" style="background-color: #dbdbdb;"></div>
 				<br />
 				<div class="offerSectionTitle">
 					Languages
@@ -72,7 +72,7 @@ var coachOfferTemplate = `
 					<span v-for="lang of profileInfo.LANGUAGES">{{lang.LANGUAGE}} ({{lang.FLUENCY}})<br /></span>
 				</div>
 				<br />
-				<div class="b-breaker" style="background-color: grey;"></div>
+				<div class="b-breaker" style="background-color: #dbdbdb;"></div>
 				<br />
 				<div class="offerSectionTitle">
 					Certifications
@@ -84,13 +84,13 @@ var coachOfferTemplate = `
 					</div>
 				</div>
 				<br />
-				<button class="button b-button" style="margin-left: 12.5%; color: black;" v-on:click="startCoaching()">Train with {{profileInfo.NAME.split(" ")[0]}}</button>
+				<button class="button b-button" style="margin: 0 auto; display: block; color: var(--b-darkblack);" v-on:click="startCoaching()">Train with {{profileInfo.NAME.split(" ")[0]}}</button>
 			</div>
 		</div>
 	</div>
 	<div v-if="!$parent.isMobile">
 		<div class="overlay" v-bind:class="{hidden: errorHidden}" style="z-index: 7;">
-			<div class="popup" style="width: 40% !important; margin-left: 15% !important;">
+			<div class="popup" style="width: 40% !important; margin: 0 auto !important;">
 				You must add a payment method before you can begin working with a Coach. You will be redirected momentarily. 
 			</div>
 		</div>
@@ -98,11 +98,11 @@ var coachOfferTemplate = `
 			<div class="column is-5">
 				<img class="mainOfferImage" v-bind:src="profileInfo.PROFILEPICTURE" />
 				<div style="text-align: center;">
-					<span style="font-weight: 900; font-size: 4vmin;">{{profileInfo.NAME}}</span>
+					<span style="font-weight: 900; font-size: 1.5rem;">{{profileInfo.NAME}}</span>
 					<br />
-					<span style="font-weight: 500; font-size: 2.5vmin;">{{profileInfo.LOCATION}}</span>
+					<span style="font-weight: 500; font-size: 1rem;">{{profileInfo.LOCATION}}</span>
 					<br />
-					<button class="button b-button" style="width: auto; color: black; font-size: 3vmin; height: 6vmin;" v-on:click="startCoaching()">Train with {{profileInfo.NAME.split(" ")[0]}}</button>
+					<button class="button b-button" style="width: auto; color: var(--b-darkblack); font-size: 1rem; height: auto; padding: 0.5rem 1rem;" v-on:click="startCoaching()">Train with {{profileInfo.NAME.split(" ")[0]}}</button>
 				</div>
 			</div>
 			<div class="column is-7">
