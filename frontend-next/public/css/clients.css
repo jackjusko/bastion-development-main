@@ -1,0 +1,73 @@
+/* Container */
+.clientsDesktop {
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.clientoptions {
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: 900;
+    font-size: 1.25rem;
+    color: var(--b-darkblack);
+}
+
+/* Client List Item */
+.clientoption {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.clientimage {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+    border: 2px solid #eee;
+}
+
+.viewAdjust {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-left: auto;
+    color: var(--teal);
+}
+
+.negativeAdjust {
+    margin-top: 0;
+}
+
+.menuItemSelected {
+    font-weight: bold;
+    color: var(--teal) !important;
+    border-bottom: 2px solid var(--teal);
+    text-decoration: none;
+}
+
+.tealcolor {
+    color: var(--teal) !important;
+}
+
+@media screen and (max-width: 768px) {
+    .clientoptions {
+        font-size: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .clientoption {
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+    
+    .clientimage {
+        width: 60px;
+        height: 60px;
+    }
+}

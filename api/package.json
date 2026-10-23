@@ -1,0 +1,28 @@
+{
+  "name": "bastion-api",
+  "private": true,
+  "description": "Bastion Express API and Vue SPA host",
+  "main": "bastion.js",
+  "scripts": {
+    "dev": "node bastion.js",
+    "start": "node bastion.js",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1692.0",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "jimp": "^0.22.12",
+    "mysql": "^2.18.1",
+    "request": "^2.88.2",
+    "sqlite3": "^5.1.7",
+    "stripe": "^17.4.0"
+  },
+  "devDependencies": {
+    "supertest": "^7.0.0",
+    "vitest": "^2.1.8"
+  }
+}

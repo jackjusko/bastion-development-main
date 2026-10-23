@@ -1,0 +1,95 @@
+/* Containers */
+.offerBackground {
+    width: 100%;
+    padding-top: 2rem;
+    background-color: white;
+}
+
+.desktopOfferBox {
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.mainOfferDisplay {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+.mainOfferImage {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.pricingBackground {
+    background-color: #f9f9f9;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+/* Typography */
+.offerPricingDisplay {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0 !important;
+    color: var(--b-darkblack);
+}
+
+.offerPricingDescription {
+    font-size: 1rem;
+    padding: 0.5rem;
+    color: #666;
+}
+
+.offerSectionTitle {
+    font-weight: 900;
+    font-size: 1.1rem;
+    padding-left: 0.5rem;
+    margin-top: 1rem;
+    color: var(--b-darkblack);
+}
+
+.offerSectionDescription {
+    font-weight: 500;
+    font-size: 1rem;
+    padding-left: 0.5rem;
+    color: var(--b-darkblack);
+    line-height: 1.5;
+}
+
+.belowOfferDisplay {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .desktopOfferBox {
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+    
+    .mainOfferDisplay {
+        width: 90%;
+    }
+    
+    .offerPricingDisplay {
+        font-size: 1.25rem;
+    }
+    
+    .belowOfferDisplay {
+        width: 90%;
+    }
+}

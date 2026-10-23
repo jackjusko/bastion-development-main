@@ -1,0 +1,88 @@
+/* Dashboard Specifics */
+.coachBackground {
+    color: var(--b-darkblack);
+    padding-bottom: 2rem;
+}
+
+.underProfilePic {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.profileText {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--b-darkblack);
+}
+
+.subedit {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #666; /* darker grey for better contrast */
+    font-weight: 300;
+    margin-top: 0.5rem;
+}
+
+/* Options List */
+.optionsContainer {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: var(--b-darkblack);
+}
+
+.drop {
+    margin-top: 0;
+    padding: 1rem 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.drop:hover {
+    background-color: #f5f5f5;
+}
+
+/* Breaker Adjustment - removing negative margins and relying on border */
+.breaker-adjust {
+    margin: 0 !important; /* Reset the global margin */
+    opacity: 0.3 !important;
+}
+
+.coachname {
+    font-weight: 400;
+    color: var(--teal);
+}
+
+.button-top {
+    margin-top: 2rem;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .optionsContainer {
+        font-size: 1.1rem;
+        width: 95%;
+    }
+    
+    .profileText {
+        font-size: 1.25rem;
+    }
+    
+    /* Make touch targets larger on mobile */
+    .drop {
+        padding: 1.25rem 0.5rem;
+    }
+    
+    .subedit {
+        font-size: 0.9rem;
+    }
+}

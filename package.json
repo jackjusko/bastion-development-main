@@ -1,0 +1,20 @@
+{
+  "name": "bastion",
+  "private": true,
+  "description": "Bastion peer-to-peer personal training marketplace",
+  "workspaces": [
+    "api",
+    "frontend-next"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=api",
+    "dev:api": "npm run dev --workspace=api",
+    "dev:next": "npm run dev --workspace=frontend-next",
+    "test": "npm run test --workspace=api && npm run test --workspace=frontend-next && npm run test:e2e --workspace=frontend-next",
+    "test:api": "npm run test --workspace=api",
+    "test:next": "npm run test --workspace=frontend-next"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

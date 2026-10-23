@@ -1,0 +1,13 @@
+node_modules/
+.env
+*.db
+*.db-journal
+api/data/
+frontend-next/.next/
+frontend-next/out/
+frontend-next/tsconfig.tsbuildinfo
+coverage/
+playwright-report/
+test-results/
+.DS_Store
+npm-debug.log*

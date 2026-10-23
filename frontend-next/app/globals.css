@@ -1,0 +1,15 @@
+html, body, #__next {
+  min-height: 100%;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.tealcolor {
+  color: var(--teal) !important;
+}
+
+.menuItemSelected {
+  font-weight: 700;
+}

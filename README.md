@@ -1,46 +1,68 @@
-Pillar Coaching
-==============
+# Bastion
 
-Pillar Coaching is an online marketplace-style platform for personal training, centered on vetted coaches and subscription-based training plans. This repository contains the web application that served as the MVP for the initial launch of an early-stage startup named Bastion LLC (Desai Accelerator 2023 finalist; seed-funded). The name Bastion is still being used by one of the initial cofounders for his personal training program, and so this has been renamed to Pillar Coaching.
+Bastion is a peer-to-peer freelance personal training marketplace. Vetted coaches publish subscription training plans, clients collect offers, and payments move coach-to-client through Stripe Connect. This repository is the web application that launched as the MVP for Bastion LLC (Desai Accelerator 2023 finalist; seed-funded).
 
-Core Product Flow
------------------
-- Coaches join the platform through an invite + vetting process.
+## Core product flow
+
+- Coaches join the platform through an invite and vetting process.
 - Coaches create training plans as recurring subscriptions.
 - Clients receive offers from coaches that include an introductory message and a suggested plan.
-- Clients select a coach from the offers they’ve received and subscribe to that coach’s plan.
-- Admin accounts (for internal staff) can inspect coach↔client relationships and send coach invites by email.
+- Clients select a coach from the offers they have received and subscribe to that coach’s plan.
+- Admin accounts (internal staff) can inspect coach↔client relationships and send coach invites by email.
 
-Billing & Payments (Stripe Connect)
------------------------------------
-A key technical component of the system is two-sided payments:
-- Clients pay coaches directly via Stripe Connect.
-- Platform fees are taken as an application fee during the payment flow.
-- Payouts to coaches are handled through connected accounts rather than via internal ledger payouts.
+## Billing and payments (Stripe Connect)
 
-This approach keeps fund flows and compliance responsibilities aligned with Stripe’s Connect model while still supporting platform-level monetization.
+Clients pay coaches directly via Stripe Connect. Bastion takes an application fee during the payment flow. Payouts go to connected Express accounts rather than through an internal ledger, which keeps fund flows and compliance on Stripe’s Connect model while still supporting platform-level monetization.
 
-Tech Stack
-----------
-Frontend
-- Vue 2 + Vue Router
-- Bulma for styling
-- Axios for API access
-- Implemented as a single-page application (SPA)
+## Tech stack
 
-Backend
-- Node.js + Express.js REST API
+**Web clients**
 
-Database
+- Vue 2 + Vue Router + Bulma (`frontend-vue`), served by the API as a hash-routed SPA
+- Next.js + React (`frontend-next`), path-routed app that calls the same REST API
+
+**API**
+
+- Node.js + Express REST API (`api`)
+
+**Database**
+
 - Relational schema with interchangeable drivers:
-  - Amazon RDS (original deployment)
-  - SQLite (used in this repository)
-- The RDS and SQLite drivers expose identical interfaces, enabling swapping without changing the surrounding application logic.
+  - SQLite (default in this repository)
+  - Amazon RDS / MySQL (original deployment)
+- Both drivers expose `initDB`, `dbGet`, `dbAll`, and `dbRun`, so route logic does not change when swapping storage.
 
-Database diagram:
-https://dbdiagram.io/d/Bastion-Database-Schema-64322d058615191cfa8c6945
+Database diagram: https://dbdiagram.io/d/Bastion-Database-Schema-64322d058615191cfa8c6945
 
-Repository Notes
-----------------
-- This repo reflects the MVP-era implementation and is organized as a typical SPA + API service.
-- Configuration here targets a local SQLite-backed environment to keep the repository self-contained.
+## Repository layout
+
+- [`api/`](api/) — Express API, Stripe Connect, SES mail, and the host for the Vue client
+- [`frontend-vue/`](frontend-vue/) — Vue 2 single-page application
+- [`frontend-next/`](frontend-next/) — Next.js application
+- [`docs/`](docs/) — architecture, API reference, schema, and local development
+
+## Run locally
+
+```bash
+cp .env.example .env
+npm install
+npm run dev:api
+```
+
+The API listens on `http://localhost:8010` and serves the Vue client at the same origin (`/#/login`, `/#/dashboard`, …).
+
+In a second terminal:
+
+```bash
+npm run dev:next
+```
+
+The Next.js client listens on `http://localhost:3000` and calls the API using `NEXT_PUBLIC_API_URL`.
+
+SQLite is created automatically at `api/data/bastionfit.db`. Stripe and AWS keys are optional; without them the API records local stand-in billing IDs and skips outbound email/uploads.
+
+```bash
+npm test
+```
+
+See [docs/development.md](docs/development.md) for environment variables, roles, and a fuller walkthrough.
